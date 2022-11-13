@@ -22,7 +22,7 @@ module.exports = async (request, response) => {
         let sendMsg = '';
         const focusingCdkey = text?.replace('relation', '')?.trim();
         const { data = {} } = await axios({
-          url: 'https://www.tgkit.fun/api/tg/setInfoByFocusingCdkey',
+          url: 'https://www.tgkit.fun/api/root/setInfoByFocusingCdkey',
           method: 'post',
           data: { focusingCdkey, relationChatId: id },
         }).catch((err) => (sendMsg = err.message));
