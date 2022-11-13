@@ -5,7 +5,7 @@ require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 
 const { telegramConfig } = require('../server/configs');
-const axios = require('./app/request');
+const axios = require('axios');
 
 module.exports = async (request, response) => {
   try {
@@ -36,7 +36,7 @@ module.exports = async (request, response) => {
         });
       } else {
         await bot.sendMessage(
-          chatId,
+          id,
           '<b>请以/relation+空格+密钥的形式来对接实时播报机器人,作者 @Liuwa91</b>',
           {
             parse_mode: 'HTML',
