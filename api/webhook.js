@@ -20,7 +20,7 @@ module.exports = async (request, response) => {
 
       if (new RegExp(/\/relation /).test(text)) {
         let sendMsg = '';
-        const focusingCdkey = text?.replace('relation', '')?.trim();
+        const focusingCdkey = text?.replace('/relation', '')?.trim();
         const { data = {} } = await axios({
           url: 'https://www.tgkit.fun/api/root/setInfoByFocusingCdkey',
           method: 'post',
