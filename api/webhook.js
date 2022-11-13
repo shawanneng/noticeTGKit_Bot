@@ -26,12 +26,14 @@ module.exports = async (request, response) => {
           method: 'post',
           data: { focusingCdkey, relationChatId: id },
         }).catch((err) => (sendMsg = err.message));
-        const { code, msg, cdkey } = data;
+        const { msg } = data;
         if (!sendMsg) {
           sendMsg = msg;
         }
         console.log('data:', data);
-        await bot.sendMessage(id, sendMsg);
+        await bot.sendMessage(id, sendMsg, {
+          parse_mode: 'HTML',
+        });
       } else {
         await bot.sendMessage(
           chatId,
