@@ -37,7 +37,7 @@ module.exports = async (request, response) => {
       } else {
         await bot.sendMessage(
           id,
-          '<b>请以/relation+空格+密钥的形式来对接实时播报机器人,作者 @Liuwa91</b>',
+          ' <a href="https://www.tgkit.fun/">请以/relation+空格+密钥的形式来对接实时播报机器人,</a> <b>作者 @Liuwa91 </b>',
           {
             parse_mode: 'HTML',
           }
